@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.env
+.env.*
+*.sqlite
+*.sqlite3
+*.db
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+dist/
+
+# Logs
+*.log
