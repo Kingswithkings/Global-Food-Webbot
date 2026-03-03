@@ -10,13 +10,13 @@ export type Product = {
   category: string;
 };
 
-// ✅ Use environment variable in production
 const API_BASE =
-  process.env.NEXT_PUBLIC_API_BASE ?? "http://127.0.0.1:8000";
+  process.env.NEXT_PUBLIC_API_BASE_URL ??
+  "http://127.0.0.1:8000";
 
 export async function fetchProducts(): Promise<Product[]> {
   const res = await fetch(`${API_BASE}/products`, {
-    cache: "no-store", // ensures fresh data
+    cache: "no-store",
   });
 
   if (!res.ok) {
@@ -25,7 +25,6 @@ export async function fetchProducts(): Promise<Product[]> {
 
   const data = await res.json();
 
-  // Safety fallback in case backend hasn't added category yet
   return (data ?? []).map((p: any) => ({
     sku: p.sku,
     name: p.name,
