@@ -1,13 +1,14 @@
+# dependencies
+**/node_modules/
+**/.next/
+**/dist/
+**/build/
+
+# python
+**/.venv/
+**/__pycache__/
+**/*.pyc
+
+# env / OS
 .env
-.venv/
-
-__pycache__/
-*.pyc
 .DS_Store
-
-node_modules/
-frontend/node_modules/
-.next/
-frontend/.next/
-out/
-frontend/out/
